@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to Sinatra!</h1>
+  <p>Hello, world!</p>
+
+  <p><a href=""></a></p>
+  <table style="width:100%">
+  	<tr>
+  		<td style="width:30%"><b>Post Title</b></td>
+  		<b><td style="width:70%"><b>Post Content</b></td>
+  		<b><td style="width:70%"><b>Link</b></td>
+  	</tr>
+  	<% @posts.each do |post| %>
+  	<tr>
+  		<td style="width:30%"><%= post.title %></td>
+  		<td style="width:70%"><%= post.content %></td>
+  		<td><a href="/posts/<%= post.id %>">Delete</a></td>
+  	</tr>
+  	<% end %>
+  </table>
+</div>

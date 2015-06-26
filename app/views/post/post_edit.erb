@@ -1,0 +1,13 @@
+<div class="container">
+	<h2>Edit Post</h4>
+	<form action="/posts/<%= @post.id %>/edit" method="POST">
+		<input name="_method" type="hidden" value="patch" />
+		<h3>Title</h3>
+		<input type="text" name="post[title]" value="<%= @post.title %>">
+		<h3>Description</h3>
+		<input type="text" name="post[content]" value="<%= @post.content %>">
+		<h4>Tags</h4>
+		<input id="post_tags" name="tags" value="<% @post.tags.each do |tag| %><%= tag.name %>,<% end %>" disabled>
+		<input type="submit" value="Submit">
+	</form>
+</div>
